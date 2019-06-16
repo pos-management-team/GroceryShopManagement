@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="~/Apps/app.js"></script>
+<script src="~/Apps/JSController/LoginController.js"></script>
+<script src="~/Apps/JSService/LogingService.js"></script>
+<script src="~/Scripts/dirPagination.js"></script>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="container" ng-app="Grocery_Shop_Management" ng-controller="LoginController">
+        <div class=" w3l-login-form">
+            <h2>Login Here</h2>
+            @*<form action="#" method="POST">*@
+            <div class=" w3l-form-group">
+                <label>Username</label>
+                <div class="group">
+                    <input id="txtUserName" style="border:none" ng-model="obj.UserId" type="text" class="form-control" placeholder="Username" required="required" />
+                </div>
+            </div>
+            <div class=" w3l-form-group">
+                <label>Password</label>
+                <div class="group">
+                    <input id="txtPassword" style="border:none" ng-model="obj.PassWord" type="password" class="form-control" placeholder="Password" required="required" />
+                </div>
+            </div>
+            <div class="forgot">
+                <a href="#">Forgot Password?</a>
+                <p><input type="checkbox">Remember Me</p>
+            </div>
+            @*<button type="submit">Login</button>*@
+            <button type="submit" value="Login" ng-click="login()" style="border-radius:5px;">Login</button>
+            @*</form>*@
+        </div>
+        @*<div>
+                <input id="txtUserId" type="text" ng-model="obj.UserId" style="width: 40%" />
+                <input id="txtPassWord" type="text" ng-model="obj.PassWord" style="width: 40%" />
+            </div>
+            <input  type="button" value="OK" ng-click="OK_Click()" style="width: 40%" />
+            <div></div>*@
+    </div>
+</body>
+</html>

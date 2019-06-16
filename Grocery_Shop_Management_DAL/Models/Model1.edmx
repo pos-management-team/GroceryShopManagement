@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="POS_Management_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T00000">
+          <Key>
+            <PropertyRef Name="T_LOGING_ID" />
+          </Key>
+          <Property Name="T_LOGING_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_USER_ID" Type="varchar" MaxLength="20" />
+          <Property Name="T_PASSWORD" Type="varchar" MaxLength="10" />
+          <Property Name="T_ROLE" Type="varchar" MaxLength="5" />
+          <Property Name="T_USER_TYPE" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T00001">
+          <Key>
+            <PropertyRef Name="T_FORM_TYPE_ID" />
+          </Key>
+          <Property Name="T_FORM_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_FORM_TYPE" Type="varchar" MaxLength="20" />
+          <Property Name="T_FORM_NAME" Type="varchar" MaxLength="10" />
+          <Property Name="T_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T12001">
+          <Key>
+            <PropertyRef Name="T_COMPANY_ID" />
+          </Key>
+          <Property Name="T_COMPANY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_COMPANY_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="T_COMPANY_TYPE" Type="varchar" MaxLength="4" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T12002">
+          <Key>
+            <PropertyRef Name="T_PRODUCT_TYPE_ID" />
+          </Key>
+          <Property Name="T_PRODUCT_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_PRODUCT_TYPE_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T12003">
+          <Key>
+            <PropertyRef Name="T_PRODUCT_ID" />
+          </Key>
+          <Property Name="T_PRODUCT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_PRODUCT_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="int" />
+          <Property Name="T_COMPANY_ID" Type="int" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T12004">
+          <Key>
+            <PropertyRef Name="T_PACK_ID" />
+          </Key>
+          <Property Name="T_PACK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_PACK_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="T_PACK_QUANTITY" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T12005">
+          <Key>
+            <PropertyRef Name="T_PRICE_ID" />
+          </Key>
+          <Property Name="T_PRICE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_PACK_ID" Type="int" />
+          <Property Name="T_PURCHASE_PRICE" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_PRICE_IN_BOX" Type="int" />
+          <Property Name="T_SALE_PRICE_IN_PIECE" Type="int" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T14001">
+          <Key>
+            <PropertyRef Name="T_STOCK_ID" />
+          </Key>
+          <Property Name="T_STOCK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_PURCHASE_TOTAL_PRICE" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_PURCHASE_DATE" Type="datetime" />
+          <Property Name="T_DISCOUNT_ID" Type="int" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T14002">
+          <Key>
+            <PropertyRef Name="T_STOCK_DETAILS_ID" />
+          </Key>
+          <Property Name="T_STOCK_DETAILS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_STOCK_ID" Type="int" />
+          <Property Name="T_PRODUCT_ID" Type="int" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="int" />
+          <Property Name="T_PRICE" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_STOCK_QUANTITY" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_PURCHASE_QUENTITY" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_QUANTIY" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_PURCHASE_RETURN_QUANTITY" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_RETURN_DATE" Type="datetime" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T14003">
+          <Key>
+            <PropertyRef Name="T_SALE_ID" />
+          </Key>
+          <Property Name="T_SALE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_PRODUCT_ID" Type="int" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="int" />
+          <Property Name="T_TOTAL_PRICE" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_DISCOUNT_ID" Type="int" />
+          <Property Name="T_SALE_DATE" Type="datetime" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T14004">
+          <Key>
+            <PropertyRef Name="T_SALE_DETAILS_ID" />
+          </Key>
+          <Property Name="T_SALE_DETAILS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_SALE_ID" Type="int" />
+          <Property Name="T_PRODUCT_ID" Type="int" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="int" />
+          <Property Name="T_SALE_PRICE" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_QUANTITY" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_RETURN" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="T_DISCOUNT_ID" Type="int" />
+          <Property Name="T_SALE_DATE" Type="datetime" />
+          <Property Name="T_ENTRY_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_ENTRY_DATE" Type="datetime" />
+          <Property Name="T_UPDATE_USER" Type="varchar" MaxLength="5" />
+          <Property Name="T_UPDATE_DATE" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="POS_Management_DBModelStoreContainer">
+          <EntitySet Name="T00000" EntityType="Self.T00000" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T00001" EntityType="Self.T00001" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T12001" EntityType="Self.T12001" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T12002" EntityType="Self.T12002" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T12003" EntityType="Self.T12003" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T12004" EntityType="Self.T12004" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T12005" EntityType="Self.T12005" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T14001" EntityType="Self.T14001" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T14002" EntityType="Self.T14002" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T14003" EntityType="Self.T14003" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T14004" EntityType="Self.T14004" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="POS_Management_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T00000">
+          <Key>
+            <PropertyRef Name="T_LOGING_ID" />
+          </Key>
+          <Property Name="T_LOGING_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="T_PASSWORD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="T_ROLE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_USER_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T00001">
+          <Key>
+            <PropertyRef Name="T_FORM_TYPE_ID" />
+          </Key>
+          <Property Name="T_FORM_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_FORM_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="T_FORM_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="T_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T12001">
+          <Key>
+            <PropertyRef Name="T_COMPANY_ID" />
+          </Key>
+          <Property Name="T_COMPANY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_COMPANY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="T_COMPANY_TYPE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T12002">
+          <Key>
+            <PropertyRef Name="T_PRODUCT_TYPE_ID" />
+          </Key>
+          <Property Name="T_PRODUCT_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_PRODUCT_TYPE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T12003">
+          <Key>
+            <PropertyRef Name="T_PRODUCT_ID" />
+          </Key>
+          <Property Name="T_PRODUCT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_PRODUCT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="Int32" />
+          <Property Name="T_COMPANY_ID" Type="Int32" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T12004">
+          <Key>
+            <PropertyRef Name="T_PACK_ID" />
+          </Key>
+          <Property Name="T_PACK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_PACK_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="T_PACK_QUANTITY" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T12005">
+          <Key>
+            <PropertyRef Name="T_PRICE_ID" />
+          </Key>
+          <Property Name="T_PRICE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_PACK_ID" Type="Int32" />
+          <Property Name="T_PURCHASE_PRICE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_PRICE_IN_BOX" Type="Int32" />
+          <Property Name="T_SALE_PRICE_IN_PIECE" Type="Int32" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T14001">
+          <Key>
+            <PropertyRef Name="T_STOCK_ID" />
+          </Key>
+          <Property Name="T_STOCK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_PURCHASE_TOTAL_PRICE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_PURCHASE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_DISCOUNT_ID" Type="Int32" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T14002">
+          <Key>
+            <PropertyRef Name="T_STOCK_DETAILS_ID" />
+          </Key>
+          <Property Name="T_STOCK_DETAILS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_STOCK_ID" Type="Int32" />
+          <Property Name="T_PRODUCT_ID" Type="Int32" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="Int32" />
+          <Property Name="T_PRICE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_STOCK_QUANTITY" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_PURCHASE_QUENTITY" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_QUANTIY" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_PURCHASE_RETURN_QUANTITY" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_RETURN_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T14003">
+          <Key>
+            <PropertyRef Name="T_SALE_ID" />
+          </Key>
+          <Property Name="T_SALE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_PRODUCT_ID" Type="Int32" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="Int32" />
+          <Property Name="T_TOTAL_PRICE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_DISCOUNT_ID" Type="Int32" />
+          <Property Name="T_SALE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T14004">
+          <Key>
+            <PropertyRef Name="T_SALE_DETAILS_ID" />
+          </Key>
+          <Property Name="T_SALE_DETAILS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_SALE_ID" Type="Int32" />
+          <Property Name="T_PRODUCT_ID" Type="Int32" />
+          <Property Name="T_PRODUCT_TYPE_ID" Type="Int32" />
+          <Property Name="T_SALE_PRICE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_QUANTITY" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_SALE_RETURN" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="T_DISCOUNT_ID" Type="Int32" />
+          <Property Name="T_SALE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_ENTRY_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_ENTRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="T_UPDATE_USER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="T_UPDATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="POS_Management_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T00000" EntityType="Self.T00000" />
+          <EntitySet Name="T00001" EntityType="Self.T00001" />
+          <EntitySet Name="T12001" EntityType="Self.T12001" />
+          <EntitySet Name="T12002" EntityType="Self.T12002" />
+          <EntitySet Name="T12003" EntityType="Self.T12003" />
+          <EntitySet Name="T12004" EntityType="Self.T12004" />
+          <EntitySet Name="T12005" EntityType="Self.T12005" />
+          <EntitySet Name="T14001" EntityType="Self.T14001" />
+          <EntitySet Name="T14002" EntityType="Self.T14002" />
+          <EntitySet Name="T14003" EntityType="Self.T14003" />
+          <EntitySet Name="T14004" EntityType="Self.T14004" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="POS_Management_DBModelStoreContainer" CdmEntityContainer="POS_Management_DBEntities">
+          <EntitySetMapping Name="T00000">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T00000">
+              <MappingFragment StoreEntitySet="T00000">
+                <ScalarProperty Name="T_LOGING_ID" ColumnName="T_LOGING_ID" />
+                <ScalarProperty Name="T_USER_ID" ColumnName="T_USER_ID" />
+                <ScalarProperty Name="T_PASSWORD" ColumnName="T_PASSWORD" />
+                <ScalarProperty Name="T_ROLE" ColumnName="T_ROLE" />
+                <ScalarProperty Name="T_USER_TYPE" ColumnName="T_USER_TYPE" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T00001">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T00001">
+              <MappingFragment StoreEntitySet="T00001">
+                <ScalarProperty Name="T_FORM_TYPE_ID" ColumnName="T_FORM_TYPE_ID" />
+                <ScalarProperty Name="T_FORM_TYPE" ColumnName="T_FORM_TYPE" />
+                <ScalarProperty Name="T_FORM_NAME" ColumnName="T_FORM_NAME" />
+                <ScalarProperty Name="T_NAME" ColumnName="T_NAME" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T12001">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T12001">
+              <MappingFragment StoreEntitySet="T12001">
+                <ScalarProperty Name="T_COMPANY_ID" ColumnName="T_COMPANY_ID" />
+                <ScalarProperty Name="T_COMPANY_NAME" ColumnName="T_COMPANY_NAME" />
+                <ScalarProperty Name="T_COMPANY_TYPE" ColumnName="T_COMPANY_TYPE" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T12002">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T12002">
+              <MappingFragment StoreEntitySet="T12002">
+                <ScalarProperty Name="T_PRODUCT_TYPE_ID" ColumnName="T_PRODUCT_TYPE_ID" />
+                <ScalarProperty Name="T_PRODUCT_TYPE_NAME" ColumnName="T_PRODUCT_TYPE_NAME" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T12003">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T12003">
+              <MappingFragment StoreEntitySet="T12003">
+                <ScalarProperty Name="T_PRODUCT_ID" ColumnName="T_PRODUCT_ID" />
+                <ScalarProperty Name="T_PRODUCT_NAME" ColumnName="T_PRODUCT_NAME" />
+                <ScalarProperty Name="T_PRODUCT_TYPE_ID" ColumnName="T_PRODUCT_TYPE_ID" />
+                <ScalarProperty Name="T_COMPANY_ID" ColumnName="T_COMPANY_ID" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T12004">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T12004">
+              <MappingFragment StoreEntitySet="T12004">
+                <ScalarProperty Name="T_PACK_ID" ColumnName="T_PACK_ID" />
+                <ScalarProperty Name="T_PACK_NAME" ColumnName="T_PACK_NAME" />
+                <ScalarProperty Name="T_PACK_QUANTITY" ColumnName="T_PACK_QUANTITY" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T12005">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T12005">
+              <MappingFragment StoreEntitySet="T12005">
+                <ScalarProperty Name="T_PRICE_ID" ColumnName="T_PRICE_ID" />
+                <ScalarProperty Name="T_PACK_ID" ColumnName="T_PACK_ID" />
+                <ScalarProperty Name="T_PURCHASE_PRICE" ColumnName="T_PURCHASE_PRICE" />
+                <ScalarProperty Name="T_SALE_PRICE_IN_BOX" ColumnName="T_SALE_PRICE_IN_BOX" />
+                <ScalarProperty Name="T_SALE_PRICE_IN_PIECE" ColumnName="T_SALE_PRICE_IN_PIECE" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T14001">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T14001">
+              <MappingFragment StoreEntitySet="T14001">
+                <ScalarProperty Name="T_STOCK_ID" ColumnName="T_STOCK_ID" />
+                <ScalarProperty Name="T_PURCHASE_TOTAL_PRICE" ColumnName="T_PURCHASE_TOTAL_PRICE" />
+                <ScalarProperty Name="T_PURCHASE_DATE" ColumnName="T_PURCHASE_DATE" />
+                <ScalarProperty Name="T_DISCOUNT_ID" ColumnName="T_DISCOUNT_ID" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T14002">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T14002">
+              <MappingFragment StoreEntitySet="T14002">
+                <ScalarProperty Name="T_STOCK_DETAILS_ID" ColumnName="T_STOCK_DETAILS_ID" />
+                <ScalarProperty Name="T_STOCK_ID" ColumnName="T_STOCK_ID" />
+                <ScalarProperty Name="T_PRODUCT_ID" ColumnName="T_PRODUCT_ID" />
+                <ScalarProperty Name="T_PRODUCT_TYPE_ID" ColumnName="T_PRODUCT_TYPE_ID" />
+                <ScalarProperty Name="T_PRICE" ColumnName="T_PRICE" />
+                <ScalarProperty Name="T_STOCK_QUANTITY" ColumnName="T_STOCK_QUANTITY" />
+                <ScalarProperty Name="T_PURCHASE_QUENTITY" ColumnName="T_PURCHASE_QUENTITY" />
+                <ScalarProperty Name="T_SALE_QUANTIY" ColumnName="T_SALE_QUANTIY" />
+                <ScalarProperty Name="T_PURCHASE_RETURN_QUANTITY" ColumnName="T_PURCHASE_RETURN_QUANTITY" />
+                <ScalarProperty Name="T_RETURN_DATE" ColumnName="T_RETURN_DATE" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T14003">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T14003">
+              <MappingFragment StoreEntitySet="T14003">
+                <ScalarProperty Name="T_SALE_ID" ColumnName="T_SALE_ID" />
+                <ScalarProperty Name="T_PRODUCT_ID" ColumnName="T_PRODUCT_ID" />
+                <ScalarProperty Name="T_PRODUCT_TYPE_ID" ColumnName="T_PRODUCT_TYPE_ID" />
+                <ScalarProperty Name="T_TOTAL_PRICE" ColumnName="T_TOTAL_PRICE" />
+                <ScalarProperty Name="T_DISCOUNT_ID" ColumnName="T_DISCOUNT_ID" />
+                <ScalarProperty Name="T_SALE_DATE" ColumnName="T_SALE_DATE" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T14004">
+            <EntityTypeMapping TypeName="POS_Management_DBModel.T14004">
+              <MappingFragment StoreEntitySet="T14004">
+                <ScalarProperty Name="T_SALE_DETAILS_ID" ColumnName="T_SALE_DETAILS_ID" />
+                <ScalarProperty Name="T_SALE_ID" ColumnName="T_SALE_ID" />
+                <ScalarProperty Name="T_PRODUCT_ID" ColumnName="T_PRODUCT_ID" />
+                <ScalarProperty Name="T_PRODUCT_TYPE_ID" ColumnName="T_PRODUCT_TYPE_ID" />
+                <ScalarProperty Name="T_SALE_PRICE" ColumnName="T_SALE_PRICE" />
+                <ScalarProperty Name="T_SALE_QUANTITY" ColumnName="T_SALE_QUANTITY" />
+                <ScalarProperty Name="T_SALE_RETURN" ColumnName="T_SALE_RETURN" />
+                <ScalarProperty Name="T_DISCOUNT_ID" ColumnName="T_DISCOUNT_ID" />
+                <ScalarProperty Name="T_SALE_DATE" ColumnName="T_SALE_DATE" />
+                <ScalarProperty Name="T_ENTRY_USER" ColumnName="T_ENTRY_USER" />
+                <ScalarProperty Name="T_ENTRY_DATE" ColumnName="T_ENTRY_DATE" />
+                <ScalarProperty Name="T_UPDATE_USER" ColumnName="T_UPDATE_USER" />
+                <ScalarProperty Name="T_UPDATE_DATE" ColumnName="T_UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

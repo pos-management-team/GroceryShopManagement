@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Apps/app.js"></script>
+<script src="~/Scripts/dirPagination.js"></script>
+
+<script src="~/Apps/JSController/MenuController.js"></script>
+<script src="~/Apps/JSService/MenuService.js"></script>
+<style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #252744;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 1px 8px 0px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    @@media screen and (max-height: 350px) {
+        .sidenav {
+            padding-top: 10px;
+        }
+
+        .sidenav a {
+            font-size: 15px;
+        }
+    }
+</style>
+<script>
+    //document.getElementById("mySidenav").style.width = "250px";
+    function openNav() {
+       document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+       document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+
+
+
+<body ng-app="Grocery_Shop_Management">
+
+    @*defaul start*@
+    @*<div class=" navbar-fixed-top navbar navbar-inverse" >
+
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a style="color: white; cursor: pointer">Home</a></li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    @*defaul end *@
+
+    <div ng-app="Grocery_Shop_Management" ng-controller="MenuController">
+        <div class=" navbar-fixed-top" style="background: #6891bade;">
+            @*navbar navbar-inverse /// for nav bar colour *@
+            <div>
+                <div class="navbar-collapse collapse">
+                    <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+                    <a href="/Menu/Menu" style="font-size: 25px; background: wheat;">Home</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div id="mySidenav" class="sidenav" style="z-index: 9999">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <h4 style="color: white; margin-left: 31px;height: 15px;">Setup</h4>
+                <div ng-repeat=" F in fromList">
+                    <div ng-if="F.T_FORM_TYPE=='Setup'">
+                        <a href="/{{F.T_FORM_TYPE}}/{{F.T_FORM_NAME}}">{{F.T_NAME}}</a>
+                    </div>
+                </div>
+                <h4 style="color: white; margin-left: 31px;height: 15px;">Transaction</h4>
+                <div ng-repeat=" F in fromList">
+                    <div ng-if="F.T_FORM_TYPE=='Transaction'">
+                        <a href="/{{F.T_FORM_TYPE}}/{{F.T_FORM_NAME}}">{{F.T_NAME}}</a>
+                    </div>
+                </div>
+                @*<a href="/Setup/T12001">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>*@
+            </div>
+        </div>
+
+    </div>
+    <div>
+        @*class="container body-content"*@
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

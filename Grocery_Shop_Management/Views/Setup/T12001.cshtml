@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "T12001";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  // Layout = "~/Views/Menu/Menu.cshtml";
+}
+<script src="~/Apps/JSController/Setup/T12001Controller.js"></script>
+<script src="~/Apps/JSService/Setup/T12001Service.js"></script>
+
+
+<div class="container" ng-app="Grocery_Shop_Management" ng-controller="T12001Controller">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div>
+                    <input type="text" style="float: right; width: 40%; height: 35px" placeholder="Search...." class="form-control" ng-model="Search" />
+                </div>
+                <table class="table table-bordered" arrow-selector>
+                    <tr style="background-color: #6891bade; color: white; text-align: center">
+                        <th style="width: 60%">Name </th>
+                    </tr>
+                    <tr dir-paginate="Z in dataList|itemsPerPage:5 " track by $index pagination-id="hospitalList" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow($index,Z)">
+                        <td>{{Z.T_LANG2_NAME}}</td>
+
+                    </tr>
+                </table>
+                <dir-pagination-controls pagination-id="hospitalList" max-size="5"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        </div>
+    </div>
+</div>
+
