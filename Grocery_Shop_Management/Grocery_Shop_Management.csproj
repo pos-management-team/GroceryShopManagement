@@ -164,6 +164,7 @@
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\Setup\SetupController.cs" />
     <Compile Include="Controllers\Setup\T12001Controller.cs" />
+    <Compile Include="Controllers\Setup\T12002Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,9 +175,11 @@
     <Content Include="Apps\JSController\LoginController.js" />
     <Content Include="Apps\JSController\MenuController.js" />
     <Content Include="Apps\JSController\Setup\T12001Controller.js" />
+    <Content Include="Apps\JSController\Setup\T12002Controller.js" />
     <Content Include="Apps\JSService\LogingService.js" />
     <Content Include="Apps\JSService\MenuService.js" />
     <Content Include="Apps\JSService\Setup\T12001Service.js" />
+    <Content Include="Apps\JSService\Setup\T12002Service.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1014,6 +1017,7 @@
     <Folder Include="Models\" />
     <Folder Include="Views\Loging\" />
     <Folder Include="Views\T12001\" />
+    <Folder Include="Views\T12002\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

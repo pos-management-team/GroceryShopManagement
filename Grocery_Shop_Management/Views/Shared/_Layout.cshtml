@@ -14,15 +14,16 @@
 
     .sidenav {
         height: 100%;
-        width: 0;
+        width: 250px;
+        /*width: 0px;*/
         position: fixed;
         z-index: 1;
-        top: 0;
+        top: 35px;
         left: 0;
         background-color: #252744;
         overflow-x: hidden;
         transition: 0.5s;
-        padding-top: 60px;
+        padding-top: 10px;
     }
 
     .sidenav a {
@@ -58,13 +59,13 @@
 </style>
 <script>
     //document.getElementById("mySidenav").style.width = "250px";
-    function openNav() {
-       document.getElementById("mySidenav").style.width = "250px";
-    }
+    //function openNav() {
+    //   document.getElementById("mySidenav").style.width = "250px";
+    //}
 
-    function closeNav() {
-       document.getElementById("mySidenav").style.width = "0";
-    }
+    //function closeNav() {
+    //   document.getElementById("mySidenav").style.width = "0";
+    //}
 </script>
 <html>
 
@@ -110,15 +111,15 @@
             @*navbar navbar-inverse /// for nav bar colour *@
             <div>
                 <div class="navbar-collapse collapse">
-                    <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
+                    @*<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>*@
                     <a href="/Menu/Menu" style="font-size: 25px; background: wheat;">Home</a>
                 </div>
             </div>
         </div>
 
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <div id="mySidenav" class="sidenav" style="z-index: 9999">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="mySidenav" class="sidenav">
+                @*<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>*@
                 <h4 style="color: white; margin-left: 31px;height: 15px;">Setup</h4>
                 <div ng-repeat=" F in fromList">
                     <div ng-if="F.T_FORM_TYPE=='Setup'">
@@ -141,10 +142,10 @@
     <div>
         @*class="container body-content"*@
         @RenderBody()
-        <hr />
+        @*<hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")

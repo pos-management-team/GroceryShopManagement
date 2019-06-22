@@ -4,6 +4,85 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
    // Layout = "~/Views/Menu/Menu.cshtml";
 }
+<style>
+    .dis {
+        display: inline-block
+    }
 
-<h2>T12002</h2>
+    .selected {
+        background-color: #6891bade;
+        color: white;
+        font-weight: bold;
+    }
 
+    tr:hover {
+        background-color: #8496a9de;
+    }
+</style>
+<script src="~/Apps/JSController/Setup/T12002Controller.js"></script>
+<script src="~/Apps/JSService/Setup/T12002Service.js"></script>
+<div class="container" style="margin-left:250px" ng-app="Grocery_Shop_Management" ng-controller="T12002Controller">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6" style=" margin-top:10px; border: 2px solid #6891bade; border-radius: 5px; padding: 10px">
+                <div class="row">
+                    <input id="txtProductId" type="text" class="hidden" style="height:25px" ng-model="T12002.T_PRODUCT_TYPE_ID" />
+                    <div class="dis" style="width:37%;text-align: right;margin-right: 22px"><label>Type Name</label> </div>
+                    <div class="dis" style="width:30%;"> <input id="txtProductType" type="text" class="form-control" style="height:25px" ng-model="T12002.T_PRODUCT_TYPE_NAME" /></div>
+                </div>
+                @*<div class="row">
+                    <div class="dis" style="width:37%;text-align: right;margin-right: 22px"><label>Company Type</label></div>
+                    <div class="dis" style="width:30%">
+                        <select class="form-control" name="T12001.ComTy" style="border-radius: 0.35em;height: 2em;"
+                                ng-model="T12001.ddlProductType"
+                                ng-change="getProductVersions()"
+                                ng-options=" ComTy.T_PRODUCT_TYPE_NAME for ComTy in ComTypeDataList track by ComTy.T_COMPANY_TYPE">
+                            <option value="">Please Select</option>
+                        </select>
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="dis" style="width:37%;text-align: right;margin-right: 3px"><label></label></div>
+                    <div class="dis" style="width:33%;text-align:right">
+                        <input type="button" value="{{Title}}" ng-click="Save_Click(T12002)" style="border-radius:0.50em;background-color:#6891bade;color:white;width:85px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        @*</div>*@
+
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top:10px">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div>
+                    <input type="text" style="float: right; width: 40%; height: 35px" placeholder="Search...." class="form-control" ng-model="Search" />
+                </div>
+                <table class="table table-bordered" arrow-selector>
+                    <tr style="background-color: #6891bade; color: white; text-align: center">                        
+                        <th style="width: 100%">Type Name </th>
+                    </tr>
+                    <tr dir-paginate="Z in dataList|filter : Search|itemsPerPage:5 " pagination-id="hospitalList" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow($index,Z)">
+                        <td style="width: 100%">{{Z.T_PRODUCT_TYPE_NAME}}</td>                        
+                        <td class="hidden">{{Z.T_PRODUCT_TYPE_ID}}</td>
+                       
+
+                    </tr>
+                </table>
+                <dir-pagination-controls pagination-id="hospitalList" max-size="5"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        </div>
+    </div>
+
+
+
+</div>
