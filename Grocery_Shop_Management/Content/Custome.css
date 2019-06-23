@@ -1,0 +1,34 @@
+﻿body {
+}
+.dis {
+    display: inline-block
+}
+
+.selected {
+    background-color: #6891bade;
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #8496a9de;
+}
+.tableBordered-Custom {
+    border: 2px solid #8496a9de
+}
+    .tableBordered-Custom > tbody > tr > td, .tableBordered-Custom > tbody > tr > th, .tableBordered-Custom > tfoot > tr > td, .tableBordered-Custom > tfoot > tr > th,
+    .tableBordered-Custom > thead > tr > td, .tableBordered-Custom > thead > tr > th {
+        border: 2px solid #8496a9de
+    }
+.table-Custom {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px
+}
+
+    .table-Custom > tbody > tr > td, .table-Custom > tbody > tr > th, .table-Custom > tfoot > tr > td, .table-Custom > tfoot > tr > th, .table-Custom > thead > tr > td, .table-Custom > thead > tr > th {
+        padding: 3px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #ddd
+    }

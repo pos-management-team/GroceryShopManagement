@@ -6,8 +6,9 @@
 }
 <script src="~/Apps/JSController/Setup/T12001Controller.js"></script>
 <script src="~/Apps/JSService/Setup/T12001Service.js"></script>
+
 <style>
-    .dis {
+    /*.dis {
         display: inline-block
     }
     .selected {
@@ -18,7 +19,10 @@
 
     tr:hover {
         background-color: #8496a9de;
-    }
+    }*/
+    /*table, th, td {
+        border: 2px solid black;
+    }*/
 </style>
 
 <div class="container" style="margin-left:250px" ng-app="Grocery_Shop_Management" ng-controller="T12001Controller">
@@ -63,7 +67,7 @@
                 <div>
                     <input type="text" style="float: right; width: 40%; height: 35px" placeholder="Search...." class="form-control" ng-model="Search" />
                 </div>
-                <table class="table table-bordered" arrow-selector>
+                <table class="table-Custom tableBordered-Custom " arrow-selector>
                     <tr style="background-color: #6891bade; color: white; text-align: center">
                         <th style="width: 50%">Product Name </th>
                         <th style="width: 50%">Type Name </th>
