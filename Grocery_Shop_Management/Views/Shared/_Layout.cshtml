@@ -112,8 +112,11 @@
             @*navbar navbar-inverse /// for nav bar colour *@
             <div>
                 <div class="navbar-collapse collapse">
-                    @*<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>*@
-                    <a href="/Menu/Menu" style="font-size: 25px; background: wheat;">Home</a>
+                    @*<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>*@                    
+                        <a href="/Menu/Menu" style="font-size: 25px; background: wheat;float:left">Home</a>
+                      
+                  
+                   
                 </div>
             </div>
         </div>
@@ -121,7 +124,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div id="mySidenav" class="sidenav">
                 @*<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>*@
-                <h4 style="color: white; margin-left: 31px;height: 15px;">Setup</h4>
+                <h4 style="color: white; margin-left: 31px;height: 15px;"@*class="glyphicon glyphicon-home"*@>Setup</h4>
                 <div ng-repeat=" F in fromList">
                     <div ng-if="F.T_FORM_TYPE=='Setup'">
                         <a href="/{{F.T_FORM_TYPE}}/{{F.T_FORM_NAME}}">{{F.T_NAME}}</a>

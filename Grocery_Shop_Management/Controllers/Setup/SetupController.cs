@@ -17,5 +17,9 @@ namespace Grocery_Shop_Management.Controllers
         {
             return View();
         }
+        public ActionResult T12003()
+        {
+            return View();
+        }
     }
 }

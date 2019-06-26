@@ -165,6 +165,7 @@
     <Compile Include="Controllers\Setup\SetupController.cs" />
     <Compile Include="Controllers\Setup\T12001Controller.cs" />
     <Compile Include="Controllers\Setup\T12002Controller.cs" />
+    <Compile Include="Controllers\Setup\T12003Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,10 +177,12 @@
     <Content Include="Apps\JSController\MenuController.js" />
     <Content Include="Apps\JSController\Setup\T12001Controller.js" />
     <Content Include="Apps\JSController\Setup\T12002Controller.js" />
+    <Content Include="Apps\JSController\Setup\T12003Controller.js" />
     <Content Include="Apps\JSService\LogingService.js" />
     <Content Include="Apps\JSService\MenuService.js" />
     <Content Include="Apps\JSService\Setup\T12001Service.js" />
     <Content Include="Apps\JSService\Setup\T12002Service.js" />
+    <Content Include="Apps\JSService\Setup\T12003Service.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1009,6 +1012,7 @@
     <Content Include="Views\Setup\T12001.cshtml" />
     <Content Include="Views\Menu\Menu.cshtml" />
     <Content Include="Views\Setup\T12002.cshtml" />
+    <Content Include="Views\Setup\T12003.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Apps\JSController\Transaction\" />
@@ -1020,6 +1024,7 @@
     <Folder Include="Views\Loging\" />
     <Folder Include="Views\T12001\" />
     <Folder Include="Views\T12002\" />
+    <Folder Include="Views\T12003\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

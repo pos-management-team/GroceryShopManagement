@@ -28,6 +28,7 @@ namespace Grocery_Shop_Management.Controllers
             try
             {
                 var ItemBrand = repository.GetfromData();
+                // Session["UserId"]= ItemBrand.T_ENTRY_USER.toList();
                 return Json(ItemBrand, JsonRequestBehavior.AllowGet);
             }
             catch (Exception exc)

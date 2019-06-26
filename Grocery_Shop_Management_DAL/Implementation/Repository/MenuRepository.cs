@@ -26,6 +26,7 @@ namespace Grocery_Shop_Management_DAL.Implementation.Repository
                         T_FORM_TYPE = i.T_FORM_TYPE,
                         T_FORM_NAME = i.T_FORM_NAME,
                         T_NAME = i.T_NAME,
+                        T_ENTRY_USER=i.T_ENTRY_USER
                     }).ToList();
 
             }

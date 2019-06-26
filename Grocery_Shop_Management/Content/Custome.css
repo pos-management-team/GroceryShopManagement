@@ -23,7 +23,7 @@ tr:hover {
 .table-Custom {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 20px
+    margin-bottom: 10px
 }
 
     .table-Custom > tbody > tr > td, .table-Custom > tbody > tr > th, .table-Custom > tfoot > tr > td, .table-Custom > tfoot > tr > th, .table-Custom > thead > tr > td, .table-Custom > thead > tr > th {

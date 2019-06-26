@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Ruhul\Grocery_Shop_Management\Project\Grocery_Shop_Management\Grocery_Shop_Management_DAL\Models\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\Github\New folder\GroceryShopManagement\Grocery_Shop_Management_DAL\Models\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

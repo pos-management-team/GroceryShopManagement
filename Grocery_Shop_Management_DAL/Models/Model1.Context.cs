@@ -36,5 +36,6 @@ namespace Grocery_Shop_Management_DAL.Models
         public virtual DbSet<T14002> T14002 { get; set; }
         public virtual DbSet<T14003> T14003 { get; set; }
         public virtual DbSet<T14004> T14004 { get; set; }
+        public virtual DbSet<T00002> T00002 { get; set; }
     }
 }

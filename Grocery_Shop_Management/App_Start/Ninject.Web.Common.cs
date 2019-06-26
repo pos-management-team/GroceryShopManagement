@@ -56,6 +56,7 @@ namespace Grocery_Shop_Management.App_Start
                 kernel.Bind<ILogin>().To<LoginRepository>();
                 kernel.Bind<IT12001>().To<T12001Repository>();
                 kernel.Bind<IT12002>().To<T12002Repository>();
+                kernel.Bind<IT12003>().To<T12003Repository>();
                 kernel.Bind<IMenu>().To<MenuRepository>();
 
                 RegisterServices(kernel);

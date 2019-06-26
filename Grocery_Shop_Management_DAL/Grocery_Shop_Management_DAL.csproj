@@ -142,10 +142,12 @@
     <Compile Include="Implementation\Interface\IMenu.cs" />
     <Compile Include="Implementation\Interface\Setup\IT12001.cs" />
     <Compile Include="Implementation\Interface\Setup\IT12002.cs" />
+    <Compile Include="Implementation\Interface\Setup\IT12003.cs" />
     <Compile Include="Implementation\Repository\LoginRepository.cs" />
     <Compile Include="Implementation\Repository\MenuRepository.cs" />
     <Compile Include="Implementation\Repository\Setup\T12001Repository.cs" />
     <Compile Include="Implementation\Repository\Setup\T12002Repository.cs" />
+    <Compile Include="Implementation\Repository\Setup\T12003Repository.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +167,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T00001.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T00002.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T12001.cs">
